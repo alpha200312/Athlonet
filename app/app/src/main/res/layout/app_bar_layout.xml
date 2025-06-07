@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="?attr/actionBarSize"
+    android:id="@+id/toolbar"
+    android:elevation="10dp"
+    app:layout_collapseMode="pin"
+    app:title="@string/app_name"
+    app:titleTextColor="@color/black"
+    app:layout_scrollFlags="scroll|enterAlways"
+    android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
+    app:menu="@menu/main_menu"
+    >
+
+</androidx.appcompat.widget.Toolbar>

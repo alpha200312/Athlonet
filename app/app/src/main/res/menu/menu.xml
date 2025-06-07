@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+        <!-- Group 1: General -->
+        <group android:checkableBehavior="single">
+            <item
+
+                android:title="Home"
+                android:id="@+id/action_home" />
+            <item
+                android:id="@+id/nav_dashboard"
+
+                android:title="Dashboard" />
+            <item
+                android:id="@+id/nav_profile"
+
+                android:title="Profile" />
+            <item
+                android:id="@+id/nav_notifications"
+                android:title="Notifications" />
+        </group>
+
+        <!-- Group 2: Activities -->
+        <group android:checkableBehavior="none">
+            <item
+                android:id="@+id/my_events"
+                android:title="My Competitions" />
+            <item
+                android:id="@+id/nav_training"
+                android:title="Training Drills" />
+            <item
+                android:id="@+id/nav_team_management"
+                android:title="Team Management" />
+        </group>
+
+        <!-- Group 3: Settings -->
+        <group android:checkableBehavior="none">
+            <item
+                android:id="@+id/nav_webview"
+                android:title="Web View Interface" />
+            <item
+                android:id="@+id/nav_settings"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_help"
+                android:title="Help Support" />
+        </group>
+
+        <!-- Group 4: Other -->
+        <group android:checkableBehavior="none">
+            <item
+                android:id="@+id/nav_logout"
+                android:title="Logout" />
+        </group>
+
+    </menu>
+

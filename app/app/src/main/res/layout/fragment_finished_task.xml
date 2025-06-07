@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Club/School Name and Follower Count -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/club_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Club/School Name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/follower_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.2K Followers"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:paddingTop="4dp" />
+    </LinearLayout>
+
+    <!-- Horizontal Tab Layout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@android:color/darker_gray"
+        app:tabMode="scrollable">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Events" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_upcoming_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upcoming Events" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_completed_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completed Events" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- RecyclerView for Tab Content -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_events"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

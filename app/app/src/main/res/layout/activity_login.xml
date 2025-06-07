@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Athlonet"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:id="@+id/progress_bar"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/email_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_field"
+                android:layout_marginTop="15dp"
+                android:hint="Enter email ..."
+                android:textColorHint="@color/black" />
+
+
+
+            <EditText
+                android:id="@+id/password_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/input_field"
+                android:hint="Enter password ..."
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColorHint="@color/black" />
+
+            <Button
+                android:id="@+id/Login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/btn_bg"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="50dp"
+                android:background="@color/shade_black"></View>
+
+            <Button
+                android:id="@+id/Register_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg"
+                android:text="Register"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</ScrollView>
