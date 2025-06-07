@@ -60,33 +60,50 @@ router.get("/all", async (req, res) => {
   }
 });
 // Get competitions by organizer ID
-router.get("/organizer/:organizerId",auth,
-   async (req, res) => {
-    try {
-      const userId=req.user.id;
+// router.get("/organizer/:organizerId",auth,
+//    async (req, res) => {
+//     try {
+//       const userId=req.user.id;
 
-        let { organizerId } = req.params;
-        organizerId = organizerId.trim(); // Remove any extra whitespace or newline
+//         let { organizerId } = req.params;
+//         organizerId = organizerId.trim(); // Remove any extra whitespace or newline
 
-        if (!mongoose.Types.ObjectId.isValid(organizerId)) {
-            return res.status(400).json({ message: "Invalid organizer ID" });
-        }
+//         if (!mongoose.Types.ObjectId.isValid(organizerId)) {
+//             return res.status(400).json({ message: "Invalid organizer ID" });
+//         }
 
-        const competitions = await Competition.find({
-          organizer: new mongoose.Types.ObjectId(organizerId),
-          participants: { $ne: userId }, // Exclude competitions the user has joined
-      }).populate("organizer");
+//         const competitions = await Competition.find({
+//           organizer: new mongoose.Types.ObjectId(organizerId),
+//           participants: { $ne: userId }, // Exclude competitions the user has joined
+//       }).populate("organizer");
 
-        if (competitions.length === 0) {
-            return res.status(404).json({ message: "No competitions found for this organizer" });
-        }
+//         if (competitions.length === 0) {
+//             return res.status(404).json({ message: "No competitions found for this organizer" });
+//         }
 
-        res.status(200).json({ success:true,competitions });
-    } catch (error) {
-        console.error("Error fetching competitions:", error);
-        res.status(500).json({ message: "Error fetching competitions", error: error.message });
+//         res.status(200).json({ success:true,competitions });
+//     } catch (error) {
+//         console.error("Error fetching competitions:", error);
+//         res.status(500).json({ message: "Error fetching competitions", error: error.message });
+//     }
+// });
+router.get("/organizer/:organizerId", async (req, res) => {
+  try {
+    const { organizerId } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(organizerId)) {
+      return res.status(400).json({ success: false, message: "Invalid organizer ID" });
     }
+
+    const competitions = await Competition.find({ organizer: organizerId }).populate("organizer");
+
+    res.status(200).json({ success: true, competitions });
+  } catch (error) {
+    console.error("Error fetching competitions by organizer:", error);
+    res.status(500).json({ success: false, message: "Server error", error: error.message });
+  }
 });
+
   
 router.get('/myCompetitions',auth, async (req, res) => {
   try {
